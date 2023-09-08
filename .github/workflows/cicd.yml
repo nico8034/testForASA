@@ -113,7 +113,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       # Transform github.actor to lowercase
       - name: Transform username to lowercase
-        run: echo "OWNER_LOWER=$(echo ${{ github.actor }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+        run: echo "OWNER_LOWER=$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
       # Building and pushing application image go to: GitHub -> Profile -> Packages 
       - name: Build & Push image
         uses: docker/build-push-action@v3
